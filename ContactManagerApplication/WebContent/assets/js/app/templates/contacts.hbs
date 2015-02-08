@@ -1,0 +1,32 @@
+
+<div class="main">
+
+    <div class="tools">
+        {{#link-to "contacts.create" class="button blue create-btn"}}
+            <i class="icon-plus"></i><span>⬅ Add Contact</span>
+        {{/link-to}}
+        
+        <div class="contacts-count">No. of Contacts: {{contactsCount}}</div>
+    </div>
+
+    <ul class="contacts-listing">
+
+        {{#each contact in controller}}
+            <li>
+                {{#link-to "contact"  contact class="fadein"}}
+                    {{contact.fname}} {{contact.lname}}
+                {{/link-to}}
+            </li>
+        {{else}}
+            <li class="no-contacts-yet">No contacts(</li>
+        {{/each}}
+
+    </ul>
+
+    <div class="contact-pane">
+        {{outlet}}
+    </div>
+
+</div>
+
+<a href="#" class="about-this-demo icon-eye" {{action "showModal" "modal-demo"}}>About this demo</a>

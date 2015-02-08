@@ -5,6 +5,7 @@ App.Contact = DS.Model.extend({
     mobno   : DS.attr('string'),
     email   : DS.attr('string'),
     addr    : DS.attr('string'),
-    note    : DS.attr('string')
+    note    : DS.attr('string'),
+    imageUrl : DS.attr('string')
 });
 
